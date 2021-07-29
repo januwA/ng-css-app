@@ -1,6 +1,43 @@
-:host 
-  display: block
+:host
+  min-height: 100vh
 
 ul
-  font-size: 18pt  
-      
+  width: 100%
+  font-size: 12pt
+  padding: 0
+  margin: 0
+
+  // 永远保持4列
+  column-count: 4
+
+  // 指定最小列宽,是一个灵活的属性
+  column-width: 300px
+  column-gap: 2em
+  column-rule: 4px double #ff00ff
+  padding: 12px
+  li
+    list-style: none
+    letter-spacing: 1px
+    transition: .5s
+    &:hover
+      letter-spacing: 2px
+    a
+      position: relative
+      display: inline-block
+      padding: 12px 0
+      color: #313030
+      text-decoration: none
+      &::after
+        content: ' '
+        position: absolute
+        left: 0
+        bottom: 0
+        width: 100%
+        border-bottom: 2px solid #000
+        border-radius: 6px
+        transition: .5s
+    &:hover > a
+      color: #000
+      &::after
+        width: 110%
+        left: -5%

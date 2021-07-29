@@ -1,0 +1,36 @@
+\:host
+  display: flex
+  justify-content: center
+  align-items: center
+  min-height: 100vh
+  background: #d2d2d2
+
+.row
+  display: flex
+  align-items: center
+  .item
+    width: 120px
+    height: 120px
+    display: flex
+    justify-content: center
+    align-items: center
+    user-select: none
+    background: #fff
+    font-weight: 900
+    font-size: 40px
+    transition: all .3s
+
+  @mixin  shadow()
+    box-shadow: 0 20px 10px rgba(0, 0, 0, .1)
+  $deg: 10deg
+  $color: #585858
+
+  &:hover .item:nth-child(odd)
+    transform: skewY(-$deg)
+    color: $color
+    @include shadow
+
+  &:hover .item:nth-child(even)
+    transform: skewY($deg)
+    color: $color
+    @include shadow

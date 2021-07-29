@@ -1,0 +1,66 @@
+$bg: #4187f6
+$r: 12px
+
+:host
+  display: flex
+  justify-content: center
+  align-items: center
+  min-height: 100vh
+  background: #000
+nav
+  position: relative
+  height: 500px
+  width: 300px
+  background: #2b343b
+  box-shadow: $r 0 0 $bg
+  display: flex
+  flex-direction: column
+  justify-content: center
+
+  ul
+    margin: 0
+    padding: 0
+    padding-left: 20px
+    padding-top: 20px
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: flex-start
+    li
+      position: relative
+      width: 100%
+      list-style: none
+      padding: 16px 0
+      padding-left: 20px
+      font-size: 15pt
+      color: #fff
+      letter-spacing: 1px
+      font-weight: 800
+      border-top-left-radius: 20px
+      border-bottom-left-radius: 20px
+
+      &.active
+        background: $bg
+        &::before
+          content: ''
+          position: absolute
+          top: $r*2*-1
+          right: 0
+          width: $r*2
+          height: $r*2
+          background: transparent
+          border-radius: 50%
+          box-shadow: $r $r 0 $bg
+
+        &::after
+          content: ''
+          position: absolute
+          bottom: $r*2*-1
+          right: 0
+          width: $r*2
+          height: $r*2
+          background: transparent
+          border-radius: 50%
+          box-shadow: $r $r*-1 0 $bg

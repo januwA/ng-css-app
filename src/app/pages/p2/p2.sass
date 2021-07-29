@@ -1,0 +1,135 @@
+$lg: 992px
+$md: 768px
+
+:host
+  display: block
+  width: 100vw
+
+.banner
+  display: grid
+  grid-template-columns: 1fr 1fr
+
+  .box
+    position: relative
+    height: 100vh
+
+    &.content
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+
+      .content-box
+        padding: 60px
+        color: #333
+        h2
+          font-size: 3em
+        p
+          font-size: 1.1em
+          color: #777
+          line-height: 1.7em
+        .btn
+          display: inline-block
+          font-size: 1.1em
+          margin-top: 20px
+          color: #333
+          text-decoration: none
+          font-weight: 500
+          border: 1px solid #333
+          padding: 10px 30px
+          letter-spacing: 1px
+          transition: 0.5s
+          &:hover
+            background: #333
+            color: #fff
+            letter-spacing: 2px
+
+      .sci
+        position: absolute
+        right: 22px
+        bottom: 12px
+        display: flex
+        align-items: center
+        letter-spacing: 1px
+        h3
+          font-weight: 500
+          color: #333
+          margin-right: 12px
+        li
+          list-style: none
+          margin-left: 1.2em
+          i
+            font-size: 42px
+
+    &.images
+      background: #ff0
+      display: flex
+      flex-wrap: wrap
+      .item
+        position: relative
+        width: 50%
+        height: 50vh
+        background: #0f0
+        &:nth-child(2)
+          background: #00f
+        &:nth-child(3)
+          width: 100%
+          background: #ff0
+
+        img
+          position: absolute
+          left: 0
+          top: 0
+          width: 100%
+          height: 100%
+          object-fit: cover
+
+  header
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    .logo
+      position: relative
+      padding: 20px 60px
+      font-size: 1.4em
+      color: #111
+      font-weight: 700
+      text-decoration: none
+
+    ul
+      display: flex
+      align-items: center
+      justify-content: center
+      margin: 0px
+      padding: 0px
+      li
+        list-style: none
+        padding: 0 24px
+        a
+          text-decoration: none
+          font-weight: 500
+          color: #dbdbdb
+          letter-spacing: 1px
+          &:hover
+            color: #322
+
+@media screen and  ( max-width: $lg )
+  .banner
+    grid-template-columns: 1fr
+    .box
+      &.content
+        height: 50vh
+      &.images
+        height: auto
+
+@media screen and  ( max-width: $md )
+  .banner
+    .box
+      &.images
+        .item
+          width: 100%

@@ -1,0 +1,37 @@
+:host
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 100vh
+  overflow: hidden
+
+.card-box
+  perspective: 500px
+  &:hover .card
+    transform: rotateY(180deg)
+
+  .card
+    position: relative
+    width: 150px
+    height: 150px
+    background: red
+    box-shadow: 2px 2px 20px 0px #a11b1b
+    user-select: none
+
+    display: flex
+    align-items: center
+    justify-content: center
+
+    transform-style: preserve-3d
+    transition: .5s ease
+
+    .front, .back
+      position: absolute
+      font-size: 38px
+      color: #fff
+
+      // 指定当元素背面朝向观察者时是否可见
+      // https://developer.mozilla.org/zh-CN/docs/Web/CSS/backface-visibility
+      backface-visibility: hidden
+    .back
+      transform: rotateY(180deg)

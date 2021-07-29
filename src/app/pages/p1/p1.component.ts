@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   `,
   styleUrls: ['./style.sass'],
 })
-export class PBaYd9YJ71oComponent implements OnInit {
+export class P1Component implements OnInit {
 
   constructor() { }
 

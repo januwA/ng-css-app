@@ -1,0 +1,25 @@
+@use "sass:list"
+
+:host
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 100vh
+  overflow: hidden
+
+h2
+  color: #111
+  font-size: 8em
+  font-weight: bold
+  user-select: none
+
+  $x: ()
+
+  @for $i from 1 through 16
+    @if $i == 2
+      $x: list.append($x, 0 1px 12px rgb(226 15 195 / 30%), $separator: comma)
+    $x: list.append($x, 0 #{$i}px 0 #333, $separator: comma)
+
+  $x: list.append($x, 0 20px 24px #333, $separator: comma)
+
+  text-shadow: $x

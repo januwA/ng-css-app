@@ -1,7 +1,17 @@
 
+css 练习
 
-https://www.youtube.com/c/OnlineTutorials4Designers/videos
+## generator page 
 
 ```
-ng g component pages/p-<video id>
+ng g component pages/p<n>
 ```
+
+## publish to github
+
+```
+./pub.sh
+```
+
+See also:
+- https://www.youtube.com/c/OnlineTutorials4Designers/videos

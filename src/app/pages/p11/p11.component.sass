@@ -1,0 +1,31 @@
+\:host
+  display: flex
+  align-items: center
+  justify-content: center
+  min-height: 100vh
+
+.row
+  display: flex
+  font-size: 42px
+  font-weight: 900
+  .item
+    animation: animate 2s infinite
+    padding: 0 6px
+
+  @for $i from 1 through 7
+    & .item:nth-child(#{$i})
+      animation-delay: $i*0.1s
+
+@keyframes animate
+  0%
+    transform: translateY(0)
+    margin-left: 0
+
+  25%
+    transform: translateY(-25px)
+    margin-left: 20px
+    text-shadow: 0 30px 6px rgba(0,0,0,.5)
+
+  100%
+    transform: translateY(0px)
+    margin-left: 0

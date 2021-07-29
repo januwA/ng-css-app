@@ -1,22 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import { Routes } from '@angular/router';
 
 @Component({
   selector: 'app-css-list',
   template: `
     <ul>
-      <li>
-        <a [routerLink]="['/p-BaYd9Y_J71o']">css 波浪线效果</a>
-      </li>
+      <ng-container *ngFor="let it of routes">
+        <li *ngIf="it.data">
+          <a [routerLink]="it.path">{{ it.data?.text }}</a>
+        </li>
+      </ng-container>
     </ul>
     <router-outlet></router-outlet>
   `,
-  styleUrls: ['./style.sass']
+  styleUrls: ['./style.sass'],
 })
 export class CssListComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  routes: Routes = [];
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    const { routes } = await import('../../app-routing.module');
+    this.routes = routes;
   }
-
 }

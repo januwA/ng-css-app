@@ -1,0 +1,134 @@
+
+  // 使用 google font
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap')
+
+@mixin transition
+  transition: .5s
+
+:host
+  font-family: consolas
+  display: flex
+  justify-content: center
+  align-items: center
+  min-height: 100vh
+  background: linear-gradient(#73c1ff, #fff)
+
+.payent
+  position: relative
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  @include transition
+
+  padding: 0px
+  transform: translateY(-60px)
+
+  &:hover
+    // 添加padding增加盒子大小
+    padding: 40px
+    transform: translateY(0)
+
+  .bg
+    position: absolute
+    bottom: 0
+    height: 70%
+    width: 100%
+    border-radius: 25px
+    background: linear-gradient(225deg, #2186f3, #ff4efd)
+
+  .card
+    z-index: 2
+    overflow: hidden
+    position: relative
+    width: 580px
+    height: 360px
+    background: #fcfcfc
+    border-radius: 15px
+    padding: 40px
+    box-shadow: 6px 6px 12px rgba(0,0,0,0.2)
+    @include transition
+    transform: translateY(120px)
+
+    // 使用伪元素创建背景
+    &::before
+      content: ''
+      width: 500px
+      height: 500px
+      position: absolute
+      left: -20%
+      top: -50%
+      background: linear-gradient(to bottom, rgba(0, 0, 0, .05), transparent)
+      border-radius: 50%
+      pointer-events: none
+
+  &:hover .card
+    transform: translateY(0)
+
+  .chip
+    position: absolute
+    color: rgb(247, 131, 172)
+    font-size: 42px
+
+  .logo
+    position: absolute
+    top: 130px
+    right: 40px
+    $size: 60px
+    width: $size
+    height: $size
+    background: #ea222c
+    border-radius: 50%
+
+    // 使用 box-shadow 创建第二个圆形
+    box-shadow: -40px 0 0 rgba(255, 164, 36, .5)
+
+  .bank-name
+    color: #999
+    text-align: end
+    outline: none
+    font-size: 1.2em
+    width: 100%
+
+  form
+    margin-top: 45px
+
+    .input-box
+      display: flex
+      flex-direction: column
+      margin-bottom: 20px
+
+      span
+        color: #089cff
+        font-size: 1.1em
+
+      input
+        border: none
+        outline: none
+        background: transparent
+        font-size: 1.8em
+        color: #333
+        font-family: 'Share Tech Mono', monospace
+
+    .group
+      width: 100%
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+      // ccv
+      .input-box:last-child
+        max-width: 60px
+
+  .btn
+    position: relative
+    margin-top: 40px
+    padding: 15px 20px
+    border-radius: 5px
+    border: none
+    outline: none
+    background: #fff
+    color: #333
+    font-size: 1.5em
+    cursor: pointer
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, .1)
