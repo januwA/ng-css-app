@@ -8,7 +8,9 @@
       "schematics": {
         "@schematics/angular:component": {
           "inlineTemplate": true,
-          "inlineStyle": true,
+          "inlineStyle": false,
+          "skipTests": true,
+          "displayBlock": true,
           "style": "sass"
         },
         "@schematics/angular:application": {
